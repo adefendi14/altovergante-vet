@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alto Vergante Vet</title>
+    <script>
+      ;(() => {
+        const redirect = sessionStorage.getItem('gh-pages-redirect')
+        if (redirect) {
+          sessionStorage.removeItem('gh-pages-redirect')
+          history.replaceState(null, '', redirect)
+          return
+        }
+
+        sessionStorage.setItem(
+          'gh-pages-redirect',
+          location.pathname.replace(/^\/altovergante-vet\/?/, '/') +
+            location.search +
+            location.hash,
+        )
+        location.replace('/altovergante-vet/')
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>

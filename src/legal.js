@@ -227,7 +227,7 @@ export const legalPages = {
         blocks: [
           {
             type: 'p',
-            text: 'Il sito presenta l’attività dell’ambulatorio veterinario. I contenuti hanno scopo informativo. Le richieste inviate dal modulo non costituiscono prenotazione confermata finché non ricevete riscontro dallo studio.',
+            text: 'Il sito presenta l’attività dell’clinica veterinaria. I contenuti hanno scopo informativo. Le richieste inviate dal modulo non costituiscono prenotazione confermata finché non ricevete riscontro dallo studio.',
           },
         ],
       },

@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom'
 import {
-  adoptions,
-  articles,
   company,
   companyStats,
   copy,
   openingHours,
+  preventionPaths,
   services,
   specialties,
   staff,
@@ -47,6 +46,12 @@ export function AboutPreview() {
               </div>
             ))}
           </dl>
+          <Link
+            to="/la-clinica"
+            className="mt-8 inline-flex text-sm font-semibold text-terracotta transition-colors duration-300 hover:text-ink"
+          >
+            Scopri la clinica →
+          </Link>
         </div>
       </div>
     </section>
@@ -192,16 +197,44 @@ export function StrengthsSection() {
   )
 }
 
+export function PreventionPreview() {
+  const content = copy.prevention
+
+  return (
+    <section className="bg-sand/70">
+      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+        <SectionHeader kicker={content.kicker} title={content.title} lead={content.lead} align="center" />
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {preventionPaths.slice(0, 3).map((path) => (
+            <article key={path.id} className="rounded-2xl border border-ink/8 bg-cream px-6 py-6">
+              <h3 className="text-xl font-semibold text-ink">{path.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">{path.description}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            to="/prevenzione"
+            className="inline-flex items-center justify-center rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-bordeaux"
+          >
+            {content.viewAll}
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 export function HoursPreview() {
   const content = copy.hours
 
   return (
-    <section className="bg-sand/70">
+    <section className="bg-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-20 md:px-8 md:py-28 lg:grid-cols-2">
         <SectionHeader kicker={content.kicker} title={content.title} lead={content.note} />
         <dl className="space-y-4">
           {openingHours.map((slot) => (
-            <div key={slot.days} className="rounded-2xl border border-ink/8 bg-cream px-6 py-5">
+            <div key={slot.days} className="rounded-2xl border border-ink/8 bg-sand px-6 py-5">
               <dt className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-ink/45">
                 {slot.days}
               </dt>
@@ -217,100 +250,16 @@ export function HoursPreview() {
   )
 }
 
-export function ArticlesPreview() {
-  const content = copy.articles
-
-  return (
-    <section className="bg-cream">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-        <SectionHeader kicker={content.kicker} title={content.title} lead={content.lead} align="center" />
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {articles.slice(0, 2).map((article) => (
-            <article
-              key={article.id}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-ink/8 bg-sand transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_40px_-28px_rgba(26,22,21,0.4)]"
-            >
-              <Placeholder
-                label={article.title}
-                src={article.image}
-                alt={article.title}
-                ratio="16 / 9"
-                rounded="rounded-none"
-              />
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="text-xl font-semibold text-ink">{article.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/65">{article.excerpt}</p>
-                <Link
-                  to={`/articoli/${article.slug}`}
-                  className="mt-5 inline-flex text-sm font-semibold text-terracotta transition-colors duration-300 hover:text-ink"
-                >
-                  {content.read} →
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <Link
-            to="/articoli"
-            className="inline-flex items-center justify-center rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-terracotta"
-          >
-            {content.viewAll}
-          </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-export function AdoptionsPreview() {
-  const content = copy.adoptions
-
-  return (
-    <section className="bg-sand/70">
-      <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
-        <SectionHeader kicker={content.kicker} title={content.title} lead={content.lead} align="center" />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {adoptions.map((item) => (
-            <article key={item.id} className="overflow-hidden rounded-2xl border border-ink/8 bg-cream">
-              <Placeholder
-                label={item.title}
-                src={item.image}
-                alt={item.title}
-                ratio="4 / 3"
-                rounded="rounded-none"
-                className="group"
-              />
-              <div className="p-5">
-                <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
-                <p className="mt-2 text-sm text-ink/65">{item.excerpt}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <Link
-            to="/adozioni"
-            className="inline-flex items-center justify-center rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-bordeaux"
-          >
-            {content.viewAll}
-          </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 export function TestimonialsSection() {
   const content = copy.testimonials
 
   return (
-    <section className="bg-cream">
+    <section className="bg-sand/70">
       <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <SectionHeader kicker={content.kicker} title={content.title} align="center" />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map((item) => (
-            <blockquote key={item.id} className="flex flex-col rounded-2xl bg-sand px-7 py-8">
+            <blockquote key={item.id} className="flex flex-col rounded-2xl bg-cream px-7 py-8">
               <p className="flex-1 text-xl font-medium leading-relaxed text-ink">“{item.quote}”</p>
               <footer className="mt-8 border-t border-ink/10 pt-4">
                 <cite className="not-italic">
@@ -328,6 +277,8 @@ export function TestimonialsSection() {
 
 export function CtaBanner() {
   const content = copy.cta
+  const phoneHref = `tel:${company.phone.replace(/\s/g, '')}`
+  const waHref = `https://wa.me/${company.phone.replace(/\D/g, '')}`
 
   return (
     <section className="bg-bordeaux text-cream">
@@ -338,10 +289,18 @@ export function CtaBanner() {
         </div>
         <div className="flex flex-wrap gap-3">
           <a
-            href={`tel:${company.phone.replace(/\s/g, '')}`}
+            href={phoneHref}
             className="inline-flex shrink-0 items-center justify-center rounded-full border border-cream/25 px-6 py-3.5 text-sm font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:border-cream"
           >
             {company.phone}
+          </a>
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border border-cream/25 px-6 py-3.5 text-sm font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:border-cream"
+          >
+            WhatsApp
           </a>
           <Link
             to="/contatti#prenota"

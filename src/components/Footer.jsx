@@ -3,6 +3,8 @@ import { company, copy, legalLinks, navLinks, openingHours } from '../data'
 import Logo from './Logo'
 
 export default function Footer() {
+  const waHref = `https://wa.me/${company.phone.replace(/\D/g, '')}`
+
   return (
     <footer className="bg-ink text-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3 md:px-8">
@@ -57,6 +59,16 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors duration-300 hover:text-cream"
+              >
+                WhatsApp
+              </a>
+            </li>
+            <li>
               {company.address}, {company.city}
             </li>
           </ul>
@@ -66,7 +78,7 @@ export default function Footer() {
                 {slot.days}: {slot.hours}
               </li>
             ))}
-            <li>Dir. San. {company.director} · Reperibilità 24h/24</li>
+            <li>Dir. San. {company.director}</li>
           </ul>
         </div>
       </div>

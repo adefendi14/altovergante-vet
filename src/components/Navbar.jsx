@@ -20,13 +20,15 @@ export default function Navbar() {
 
   const close = () => setOpen(false)
   const serviziActive = location.pathname.startsWith('/servizi')
+  const clinicaActive =
+    location.pathname.startsWith('/la-clinica') || location.pathname.startsWith('/ambulatorio')
 
   return (
     <header className="sticky top-0 z-40 border-b border-ink/10 bg-cream/95 backdrop-blur-md">
       <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-4 px-5 md:px-8">
         <Logo onClick={close} />
 
-        <nav className="hidden items-center gap-7 xl:flex" aria-label="Navigazione principale">
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Navigazione principale">
           {navLinks.map((link) => {
             if (link.href === '/servizi') {
               return (
@@ -60,7 +62,12 @@ export default function Navbar() {
               )
             }
 
-            const active = location.pathname === link.href
+            const active =
+              link.href === '/la-clinica'
+                ? clinicaActive
+                : location.pathname === link.href ||
+                  (link.href !== '/' && location.pathname.startsWith(link.href))
+
             return (
               <Link
                 key={link.href}

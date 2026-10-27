@@ -5,6 +5,7 @@ import { company, copy, openingHours } from '../data'
 
 export default function Contatti() {
   const content = copy.contact
+  const waHref = `https://wa.me/${company.phone.replace(/\D/g, '')}`
 
   return (
     <section className="bg-sand/70">
@@ -30,6 +31,15 @@ export default function Contatti() {
               >
                 {company.phone}
               </a>
+              <span className="mx-2 text-ink/25">·</span>
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noreferrer"
+                className="text-terracotta transition-colors duration-300 hover:text-ink"
+              >
+                WhatsApp
+              </a>
             </p>
             <p className="mt-2 text-sm">
               <a
@@ -42,7 +52,6 @@ export default function Contatti() {
             <p className="mt-3 text-sm text-ink/60">
               Dir. San. <strong className="text-ink">{company.director}</strong>
             </p>
-            <p className="mt-1 text-sm text-ink/55">Reperibilità 24h/24</p>
           </address>
 
           <div className="mt-8 space-y-3">
@@ -55,6 +64,13 @@ export default function Contatti() {
               </div>
             ))}
             <p className="text-xs leading-relaxed text-ink/50">{copy.hours.note}</p>
+          </div>
+
+          <div className="mt-8 rounded-xl border border-gold/35 bg-sand/80 px-4 py-4">
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-ink/45">
+              {content.urgencyTitle}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-ink/70">{content.urgencyText}</p>
           </div>
 
           <div className="mt-8 overflow-hidden rounded-xl border border-ink/8">

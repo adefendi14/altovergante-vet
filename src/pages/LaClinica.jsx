@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom'
 import Placeholder from '../components/Placeholder'
 import SectionHeader from '../components/SectionHeader'
-import { aboutGallery, companyStats, companyValues, copy, specialties } from '../data'
+import {
+  aboutGallery,
+  clinicSpaces,
+  companyStats,
+  companyValues,
+  copy,
+} from '../data'
 
-export default function Ambulatorio() {
+export default function LaClinica() {
   const content = copy.about
 
   return (
@@ -65,11 +71,16 @@ export default function Ambulatorio() {
 
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-24">
-          <SectionHeader kicker={copy.specialties.kicker} title={copy.specialties.title} lead={copy.specialties.lead} />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {specialties.map((item) => (
-              <article key={item.id} className="rounded-2xl border border-ink/8 bg-sand px-6 py-6">
-                <h2 className="text-xl font-semibold text-ink">{item.name}</h2>
+          <SectionHeader
+            kicker="Ambienti"
+            title="Organizzazione della struttura"
+            lead="Dal parcheggio al giardino, ogni spazio è pensato per accogliere e curare al meglio."
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2">
+            {clinicSpaces.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-ink/8 bg-sand px-6 py-6">
+                <h2 className="text-xl font-semibold text-ink">{item.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-ink/65">{item.description}</p>
               </article>
             ))}
           </div>
@@ -87,12 +98,18 @@ export default function Ambulatorio() {
               </article>
             ))}
           </div>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-wrap gap-3">
             <Link
               to="/contatti#prenota"
               className="inline-flex items-center justify-center rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-bordeaux"
             >
               {copy.cta.quote}
+            </Link>
+            <Link
+              to="/degenza"
+              className="inline-flex items-center justify-center rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:text-terracotta"
+            >
+              {copy.degenza.viewAll}
             </Link>
           </div>
         </div>

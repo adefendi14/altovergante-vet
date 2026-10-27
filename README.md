@@ -1,6 +1,6 @@
-# Alto Vergante Vet
+# Clinica Alto Vergante
 
-Sito vetrina dell’Ambulatorio Veterinario Alto Vergante (Nebbiuno, NO).
+Sito della Clinica Veterinaria Alto Vergante (Nebbiuno, NO).
 
 Anteprima: https://adefendi14.github.io/altovergante-vet/
 
@@ -9,6 +9,8 @@ npm install
 npm run dev
 ```
 
-Apri `http://127.0.0.1:5177`.
+Apri `http://127.0.0.1:5177/altovergante-vet/`.
 
-Per il modulo prenotazioni, copia `.env.example` in `.env` e inserisci la chiave Web3Forms. In produzione la chiave va anche nel secret `VITE_WEB3FORMS_ACCESS_KEY` del repository GitHub.
+Pagine: Home, La Clinica, Staff, Servizi, Degenza, Prevenzione, Contatti.
+
+Per il modulo prenotazioni, copia `.env.example` in `.env` e inserisci la chiave Web3Forms.

@@ -2,13 +2,12 @@ import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import ScrollToTop from './components/ScrollToTop'
-import Adozioni from './pages/Adozioni'
-import Ambulatorio from './pages/Ambulatorio'
-import Articolo from './pages/Articolo'
-import Articoli from './pages/Articoli'
 import Contatti from './pages/Contatti'
+import Degenza from './pages/Degenza'
 import Home from './pages/Home'
+import LaClinica from './pages/LaClinica'
 import LegalPage from './pages/Legal'
+import Prevenzione from './pages/Prevenzione'
 import Servizi from './pages/Servizi'
 import Staff from './pages/Staff'
 
@@ -26,12 +25,12 @@ export default function App() {
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ambulatorio" element={<Ambulatorio />} />
+          <Route path="/la-clinica" element={<LaClinica />} />
+          <Route path="/ambulatorio" element={<LaClinica />} />
           <Route path="/servizi" element={<Servizi />} />
           <Route path="/staff" element={<Staff />} />
-          <Route path="/adozioni" element={<Adozioni />} />
-          <Route path="/articoli" element={<Articoli />} />
-          <Route path="/articoli/:slug" element={<Articolo />} />
+          <Route path="/degenza" element={<Degenza />} />
+          <Route path="/prevenzione" element={<Prevenzione />} />
           <Route path="/contatti" element={<Contatti />} />
           <Route path="/privacy" element={<LegalPage doc="privacy" />} />
           <Route path="/cookie" element={<LegalPage doc="cookie" />} />

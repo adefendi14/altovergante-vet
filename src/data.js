@@ -1,13 +1,14 @@
 import { asset } from './lib/assets'
 
 export const company = {
-  name: 'Alto Vergante Vet',
-  legalName: 'Ambulatorio Veterinario Alto Vergante',
-  tagline: 'Ambulatorio veterinario',
+  name: 'Clinica Alto Vergante',
+  legalName: 'Clinica Veterinaria Alto Vergante',
+  tagline: 'Clinica veterinaria',
   director: 'Dott. Luca Giometti',
   address: 'Via Provinciale Alto Vergante 16',
   city: '28010 Nebbiuno (NO)',
   phone: '+39 342 170 5983',
+  phoneWhatsApp: true,
   email: 'altovergante.vet@gmail.com',
   website: 'www.altovergantevet.it',
   mapEmbed:
@@ -15,35 +16,34 @@ export const company = {
 }
 
 export const openingHours = [
-  { days: 'Lunedì — Venerdì', hours: '10:00 – 13:00 / 15:00 – 19:00' },
-  { days: 'Sabato', hours: '10:00 – 12:30 / 17:00 – 19:00' },
+  { days: 'Lunedì — Venerdì', hours: '09:00 – 13:00 / 15:00 – 19:00' },
+  { days: 'Sabato', hours: '09:00 – 12:30 / 15:30 – 17:30' },
 ]
 
 export const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/ambulatorio', label: 'Ambulatorio' },
-  { href: '/servizi', label: 'Servizi' },
+  { href: '/la-clinica', label: 'La Clinica' },
   { href: '/staff', label: 'Staff' },
-  { href: '/adozioni', label: 'Adozioni' },
-  { href: '/articoli', label: 'Articoli' },
+  { href: '/servizi', label: 'Servizi' },
+  { href: '/degenza', label: 'Degenza' },
+  { href: '/prevenzione', label: 'Prevenzione' },
   { href: '/contatti', label: 'Contatti' },
 ]
 
 export const specialties = [
-  { id: 'gastroenterologia', name: 'Gastroenterologia' },
-  { id: 'dermatologia', name: 'Dermatologia' },
-  { id: 'odontoiatria', name: 'Odontoiatria' },
-  { id: 'ortopedia', name: 'Ortopedia' },
-  { id: 'neurologia', name: 'Neurologia' },
-  { id: 'oculistica', name: 'Oculistica' },
-  { id: 'cardiologia', name: 'Cardiologia' },
-  { id: 'comportamentalismo', name: 'Comportamentalismo' },
-  { id: 'esotici', name: 'Animali esotici' },
-  { id: 'laboratorio', name: 'Esami di laboratorio' },
+  { id: 'medicina-interna', name: 'Medicina interna' },
+  { id: 'comportamento', name: 'Medicina comportamentale' },
   { id: 'radiologia', name: 'Radiologia' },
   { id: 'ecografia', name: 'Ecografia' },
+  { id: 'ecocardiografia', name: 'Ecocardiografia' },
+  { id: 'laboratorio', name: 'Laboratorio interno' },
   { id: 'chirurgia-molli', name: 'Chirurgia tessuti molli' },
   { id: 'chirurgia-duri', name: 'Chirurgia tessuti duri' },
+  { id: 'odontostomatologia', name: 'Odontostomatologia' },
+  { id: 'degenza', name: 'Degenza' },
+  { id: 'oftalmologia', name: 'Oftalmologia' },
+  { id: 'cardiologia', name: 'Cardiologia' },
+  { id: 'nutrizione', name: 'Nutrizione' },
 ]
 
 export const aboutGallery = [
@@ -51,101 +51,131 @@ export const aboutGallery = [
     src: asset('images/gallery/sala-visita.jpg'),
     alt: 'Sala chirurgica con strumentario sterile',
     caption: 'Chirurgia',
-    description: 'Check-up preanestesiologico, monitoraggio continuo e attenzione al dolore.',
+    description: 'Locali dedicati, sterilizzazione e macchinari di ultima generazione.',
   },
   {
     src: asset('images/gallery/laboratorio.jpg'),
-    alt: 'Gabbie di degenza in acciaio inox',
+    alt: 'Area degenza della clinica',
     caption: 'Degenza',
-    description: 'Gabbie in acciaio inox, controllo della temperatura e fluidoterapia.',
+    description: 'Due degenze separate per cani e gatti, con accesso al giardino.',
   },
   {
     src: asset('images/gallery/interno-2.jpg'),
     alt: 'Intervento in sala operatoria',
     caption: 'Sala operatoria',
-    description: 'Attrezzature chirurgiche, anestesiologiche e di rianimazione.',
+    description: 'Attrezzature chirurgiche, anestesiologiche e di monitoraggio.',
   },
 ]
 
 export const companyStats = [
-  { label: 'Reperibilità', value: '24h/24' },
+  { label: 'Dal', value: '2013' },
   { label: 'Direzione sanitaria', value: 'Dr. Giometti' },
-  { label: 'Aree cliniche', value: '14' },
+  { label: 'Aree cliniche', value: '13+' },
 ]
 
 export const strengths = [
   {
-    id: 'macchinari',
-    title: 'Diagnostica aggiornata',
-    description: 'Radiologia digitale, laboratorio interno e strumentazione di ultima generazione.',
+    id: 'spazi',
+    title: 'Spazi dedicati',
+    description: 'Reception divisa cani/gatti, sale visita sul giardino e locali per ogni funzione.',
   },
   {
-    id: 'dolore',
-    title: 'Trattamento del dolore',
-    description: 'Analgesia multimodale anche in chirurgia: l’animale addormentato può comunque percepire dolore.',
+    id: 'giardino',
+    title: 'Parcheggio e giardino',
+    description: 'Parcheggio in piano sulla provinciale e ampio giardino per passeggiare e socializzare.',
   },
   {
-    id: 'degenza',
-    title: 'Degenza e terapia intensiva',
-    description: 'Gabbie in acciaio inox, controllo della temperatura e pompe di infusione.',
+    id: 'tecnologia',
+    title: 'Tecnologia aggiornata',
+    description: 'Macchinari di ultima generazione e due ventilazioni meccaniche controllate.',
   },
   {
-    id: 'domicilio',
-    title: 'Visite a domicilio',
-    description: 'Fuori orario si effettuano visite a domicilio e in struttura su appuntamento.',
+    id: 'famiglia',
+    title: 'Rapporto di famiglia',
+    description: 'Professionalità unita a un’accoglienza calda: trattiamo i vostri animali come se fossero i nostri.',
+  },
+]
+
+export const clinicSpaces = [
+  {
+    title: 'Accoglienza',
+    description:
+      'Reception moderna divisa in zona cani e zona gatti, con parcheggio in piano direttamente sulla strada provinciale.',
+  },
+  {
+    title: 'Sale visita',
+    description:
+      'Sale visita tutte dotate di porta-finestra sul giardino, lungo un corridoio che dà accesso diretto a ogni stanza.',
+  },
+  {
+    title: 'Diagnostica e chirurgia',
+    description:
+      'Locali dedicati a ecografia, laboratorio interno, pre-chirurgia, sterilizzazione e sala chirurgica.',
+  },
+  {
+    title: 'Degenza e servizi',
+    description:
+      'Degenze separate per cani e gatti, spogliatoio, locale ristoro, magazzini e ufficio.',
   },
 ]
 
 export const services = [
   {
-    id: 'visite-domicilio',
-    title: 'Visite a domicilio e su appuntamento',
-    description:
-      'Al di fuori degli orari di apertura si effettuano visite a domicilio e in struttura su appuntamento, anche al mattino e al pomeriggio oltre gli orari indicati.',
-    highlights: ['Fuori orario', 'A domicilio', 'In struttura'],
-    featured: true,
-  },
-  {
     id: 'medicina-interna',
     title: 'Medicina interna',
     description:
-      'Tutti i medici dello staff eseguono visite di medicina interna e vaccinazioni, preferibilmente su appuntamento. L’ambulatorio è dotato di attrezzature da laboratorio che in pochi minuti forniscono i risultati di esami del sangue (emocromocitometrico, ematochimico), delle urine e delle feci. Eseguiamo inoltre esami micologici, batteriologici, virologici ed endocrinologici, in sede o con laboratori esterni selezionati. Ci occupiamo della profilassi e della terapia della filariosi cardiovascolare e della leishmaniosi. Siamo autorizzati dalla ASL all’applicazione del microchip nel cane e nel gatto.',
-    highlights: ['Vaccinazioni', 'Laboratorio interno', 'Microchip ASL'],
+      'Visite di medicina interna per la diagnosi e la gestione delle patologie mediche, con un approccio attento e tempi dedicati al proprietario.',
+    highlights: ['Visite su appuntamento', 'Follow-up clinico', 'Consulenza telefonica'],
+    featured: true,
+  },
+  {
+    id: 'comportamento',
+    title: 'Medicina comportamentale',
+    description:
+      'Specialisti in comportamento animale per supportare cuccioli, adulti e situazioni di disagio, con attenzione alla relazione e alla socializzazione.',
+    highlights: ['Comportamento', 'Cuccioli', 'Supporto al proprietario'],
+  },
+  {
+    id: 'diagnostica',
+    title: 'Diagnostica per immagini',
+    description:
+      'Radiologia, ecografia ed ecocardiografia per approfondimenti diagnostici rapidi e mirati, in collaborazione con specialisti interni.',
+    highlights: ['Radiologia', 'Ecografia', 'Ecocardiografia'],
+  },
+  {
+    id: 'laboratorio',
+    title: 'Laboratorio',
+    description:
+      'Laboratorio interno con intelligenza artificiale per analisi ematiche, urine, feci e citologia. Laboratorio esterno con corriere notturno per campioni urgenti fino alle ore 20.',
+    highlights: ['Analisi in sede', 'IA diagnostica', 'Corriere fino alle 20'],
   },
   {
     id: 'chirurgia',
-    title: 'Chirurgia generale e d’urgenza',
+    title: 'Chirurgia',
     description:
-      'L’ambulatorio è dotato di attrezzature chirurgiche, anestesiologiche e di rianimazione. Prima di un’anestesia sottoponiamo l’animale a un check-up preanestesiologico: esami del sangue, visita cardiologica e, nei pazienti anziani o a rischio, radiografia al torace, ecografia e quanto necessario. Durante l’anestesia il paziente viene monitorato costantemente.',
-    highlights: ['Check-up preanestesiologico', 'Monitoraggio continuo', 'Urgenze'],
+      'Chirurgia dei tessuti molli e dei tessuti duri, con locali dedicati a pre-chirurgia, sterilizzazione e sala operatoria.',
+    highlights: ['Tessuti molli', 'Tessuti duri', 'Preparazione pre-chirurgica'],
   },
   {
-    id: 'ortopedia',
-    title: 'Ortopedia',
+    id: 'odontostomatologia',
+    title: 'Odontostomatologia',
     description:
-      'Diagnostica e terapia medica e chirurgica delle malattie ossee genetiche del cane e del gatto (displasia dell’anca, del gomito e del ginocchio). Le visite ortopediche si svolgono su appuntamento. Nella rottura del legamento crociato craniale applichiamo le tecniche TPLO ed extracapsulare. Per le fratture usiamo fissatori esterni, placche e metodica di Ilizarov, a seconda del caso.',
-    highlights: ['Displasie', 'TPLO', 'Fratture'],
-  },
-  {
-    id: 'radiologia',
-    title: 'Radiologia',
-    description:
-      'Utilizziamo apparecchi di radiologia digitale: radiografie in tempi brevissimi e qualità d’immagine dettagliata. Aumenta la precisione diagnostica e permette di gestire rapidamente i pazienti critici, come nel caso di animali investiti.',
-    highlights: ['Digitale', 'Tempi rapidi', 'Pazienti critici'],
-  },
-  {
-    id: 'odontoiatria',
-    title: 'Odontoiatria',
-    description:
-      'Apparecchi odontoiatrici al pari della medicina umana. Per la detartrasi usiamo un ablatore piezoelettrico a ultrasuoni con serbatoio integrato per disinfettanti. Quando serve un’estrazione, un micromotore con fresa a punta diamantata rende l’intervento più preciso e meno invasivo.',
-    highlights: ['Detartrasi', 'Estrazioni', 'Igiene'],
+      'Cure odontoiatriche e stomatologiche per igiene orale, prevenzione e interventi dedicati alla salute della bocca.',
+    highlights: ['Igiene orale', 'Prevenzione', 'Interventi specialistici'],
   },
   {
     id: 'degenza',
-    title: 'Degenza e terapia intensiva',
+    title: 'Degenza',
     description:
-      'Nel locale di degenza sono presenti gabbie interamente in acciaio inox, con griglie e sistemi di scarico per mantenere i pazienti in condizioni igieniche ottimali. Sistemi per il controllo della temperatura e pompe di infusione garantiscono precisione nella fluidoterapia, essenziale in terapia intensiva.',
-    highlights: ['Acciaio inox', 'Controllo temperatura', 'Fluidoterapia'],
+      'Due degenze separate per cani e gatti, con day hospital e possibilità di assistenza notturna per chirurgie complesse o urgenti.',
+    highlights: ['Cani e gatti', 'Day hospital', 'Accesso al giardino'],
+  },
+  {
+    id: 'rete',
+    title: 'Rete di collaborazioni',
+    description:
+      'Stretta collaborazione con educatori cinofili, pensioni e asili per animali, toelettature e dog/cat sitter selezionati negli anni.',
+    highlights: ['Educatori', 'Pensioni e asili', 'Dog/cat sitter'],
   },
 ]
 
@@ -156,343 +186,299 @@ export const staff = [
     role: 'Direttore sanitario',
     image: asset('images/staff/luca-giometti.jpg'),
     areas: [
+      'Chirurgia tessuti molli',
+      'Chirurgia laparoscopica',
+      'Odontostomatologia',
+      'Endoscopia',
       'Medicina interna',
-      'Chirurgia dei tessuti molli',
-      'Odontoiatria',
-      'Medicina d’urgenza e terapia intensiva',
-      'Diagnostica per immagini',
     ],
   },
   {
-    id: 'guido-sessa',
-    name: 'Dr. Guido Sessa',
+    id: 'giulia-cerino',
+    name: 'Dr.ssa Giulia Cerino',
     role: 'Medico veterinario',
-    image: asset('images/staff/guido-sessa.jpg'),
-    areas: ['Endoscopia', 'Laparoscopia'],
+    image: null,
+    areas: ['Comportamento animale', 'Medicina interna'],
+  },
+  {
+    id: 'cecilia-pizzorni',
+    name: 'Dr.ssa Cecilia Pizzorni',
+    role: 'Medico veterinario',
+    image: null,
+    areas: ['Medicina interna', 'Ecografia'],
+  },
+  {
+    id: 'bianca-caione',
+    name: 'Dr.ssa Bianca Caione',
+    role: 'Medico veterinario',
+    image: null,
+    areas: ['Comportamento animale', 'Medicina interna', 'Ecografia'],
+  },
+  {
+    id: 'francesca-mussinelli',
+    name: 'Dr.ssa Francesca Mussinelli',
+    role: 'Medico veterinario',
+    image: null,
+    areas: ['Medicina interna'],
+  },
+  {
+    id: 'elena-cristina',
+    name: 'Elena Cristina',
+    role: 'Assistente veterinario',
+    image: null,
+    areas: ['Assistenza in clinica'],
+  },
+  {
+    id: 'giorgia-fortis',
+    name: 'Giorgia Fortis',
+    role: 'Tecnico veterinario',
+    image: null,
+    areas: ['Supporto tecnico'],
+  },
+  {
+    id: 'tiziano-monti',
+    name: 'Dr. Tiziano Monti',
+    role: 'Specialista in oftalmologia',
+    image: null,
+    areas: ['Oftalmologia'],
+  },
+  {
+    id: 'giulia-pizzamiglio',
+    name: 'Dr.ssa Giulia Pizzamiglio',
+    role: 'Specialista in cardiologia',
+    image: null,
+    areas: ['Cardiologia'],
+  },
+  {
+    id: 'massimo-pavanelli',
+    name: 'Dr. Massimo Pavanelli',
+    role: 'Specialista in ortopedia',
+    image: null,
+    areas: ['Ortopedia'],
   },
   {
     id: 'stefano-caruso',
     name: 'Dr. Stefano Caruso',
     role: 'Specialista in ortopedia',
     image: asset('images/staff/stefano-caruso.jpg'),
-    areas: ['Visite ortopediche', 'Chirurgia dei tessuti duri'],
+    areas: ['Ortopedia'],
   },
   {
-    id: 'chiara-costa-devoti',
-    name: 'Dr.ssa Chiara Costa Devoti',
-    role: 'Collaboratore esterno',
+    id: 'emilio-maviglio',
+    name: 'Dr. Emilio Maviglio',
+    role: 'Specialista in endoscopia',
     image: null,
-    areas: [
-      'Medicina interna',
-      'Anestesia',
-      'Gastroenterologia',
-      'Medicina d’urgenza e terapia intensiva',
-    ],
+    areas: ['Endoscopia'],
   },
   {
-    id: 'francesca-varvello',
-    name: 'Francesca Varvello',
-    role: 'Assistente veterinaria — collaboratore esterno',
-    image: asset('images/staff/francesca-varvello.jpg'),
-    areas: ['Assistenza in ambulatorio'],
+    id: 'valentina-croci',
+    name: 'Dr.ssa Valentina Croci',
+    role: 'Nutrizionista animale',
+    image: null,
+    areas: ['Nutrizione'],
+  },
+  {
+    id: 'kiwi',
+    name: 'Kiwi',
+    role: 'Assistente a 4 zampe',
+    image: null,
+    areas: ['Socializzazione', 'Accoglienza cuccioli'],
   },
 ]
 
-export const adoptions = [
+export const preventionPaths = [
   {
-    id: 'mamma-micini',
-    title: 'Mamma e micini cercano casa',
-    image: asset('images/adozioni/mamma-micini.jpg'),
-    excerpt: 'Una gatta con i suoi cuccioli in cerca di una famiglia.',
+    id: 'cucciolo',
+    title: 'Cucciolo e gattino',
+    description:
+      'La prima visita è il momento per costruire insieme il percorso: vaccinazioni secondo le linee guida WSAVA, profilassi antiparassitaria e consigli su educatori, asili, pensioni, toelettature e dog/cat sitter.',
+    highlights: ['Prima visita', 'Vaccini WSAVA', 'Rete di collaborazioni'],
   },
   {
-    id: 'gattino-grigio',
-    title: 'Gattino grigio cerca casa',
-    image: asset('images/adozioni/gattino-grigio.jpg'),
-    excerpt: 'Un gattino grigio in attesa di adozione.',
-  },
-]
-
-export const articles = [
-  {
-    id: 'anestesia',
-    slug: 'domande-frequenti-anestesia',
-    title: 'Domande più frequenti sull’anestesia in veterinaria',
-    excerpt:
-      'Sicurezza, digiuno, animali anziani o cardiopatici e controllo del dolore: le risposte dello staff.',
-    image: asset('images/articoli.jpg'),
-    sections: [
-      {
-        heading: 'Che cos’è un anestetico?',
-        paragraphs: [
-          'Gli anestetici sono farmaci, somministrati per via iniettabile o inalatoria, che causano perdita di coscienza. Li usiamo quotidianamente per studi radiografici, indagini diagnostiche o interventi chirurgici.',
-        ],
-      },
-      {
-        heading: 'Gli anestetici sono sicuri?',
-        paragraphs: [
-          'Tutti gli anestetici comportano un minimo rischio. Lo riduciamo con visita pre-anestetica, esami del sangue, scelta di farmaci a breve emivita, monitoraggio continuo e assistenza al risveglio fino al recupero della deambulazione.',
-        ],
-        list: [
-          'Visita pre-anestetica e raccolta anamnestica',
-          'Esami del sangue per valutare rene, fegato, quadro ematologico ed endocrino',
-          'Sedazione intramuscolare, induzione endovenosa e mantenimento inalatorio dopo intubazione',
-          'Monitoraggio: ECG, pulsossimetro, capnometro, pressione e temperatura',
-          'Risveglio seguito fino all’estubazione e in sala di degenza',
-        ],
-      },
-      {
-        heading: 'Il mio animale è troppo vecchio per un’anestesia?',
-        paragraphs: [
-          'L’età non è un fattore limitante: aumenta il rischio la presenza di disfunzioni d’organo. Proprio gli animali anziani vanno spesso incontro a patologie che richiedono un intervento (denti, tumori, infezioni uterine).',
-        ],
-      },
-      {
-        heading: 'Un animale cardiopatico può affrontare un’anestesia?',
-        paragraphs: [
-          'Oltre ai controlli di routine servono radiografia al torace, ecocardiografia ed elettrocardiogramma. Un cardiopatico in condizioni emodinamiche stabili può affrontare un’anestesia con rischi sovrapponibili a quelli di un paziente sano. Le vere controindicazioni sono bradiaritmie, tachiaritmie ventricolari sostenute e sindromi a bassa portata.',
-        ],
-      },
-      {
-        heading: 'Cosa fare prima di portare l’animale in clinica?',
-        paragraphs: [
-          'Digiuno di 8 ore (4 ore sotto i 3 mesi). Le razze brachicefale (Bulldog, Carlino, Pechinese, Shih-tzu) possono necessitare di almeno 18 ore. Se non siete sicuri che sia a digiuno, comunicatecelo.',
-        ],
-      },
-      {
-        heading: 'Il mio animale soffre?',
-        paragraphs: [
-          'Il controllo multimodale del dolore, con analgesici sistemici e anestesia loco-regionale, gestisce l’analgesia. Le dimissioni avvengono quando l’animale non sente più male o quando il dolore è gestibile a casa con compresse.',
-        ],
-      },
-      {
-        heading: 'Dopo l’anestesia può mangiare?',
-        paragraphs: [
-          'Tranne pochi casi legati al tipo di intervento, la sera stessa può mangiare metà della razione quotidiana. Se rifiuta il cibo può trattarsi di nausea da farmaci: mangerà il giorno successivo.',
-        ],
-      },
-    ],
+    id: 'adulto',
+    title: 'Animale adulto',
+    description:
+      'Controlli periodici e percorsi di prevenzione costruiti sullo stile di vita del vostro animale, con spiegazioni semplici e tutto il tempo necessario.',
+    highlights: ['Controlli periodici', 'Su misura', 'Educazione al proprietario'],
   },
   {
-    id: 'sterilizzazione-gatto',
-    slug: 'sterilizzazione-castrazione-gatto',
-    title: 'La sterilizzazione e la castrazione del gatto',
-    excerpt: 'Preparazione all’intervento, risveglio a casa e vantaggi per salute e convivenza.',
-    image: asset('images/adozioni/gatto.jpg'),
-    sections: [
-      {
-        heading: 'Prima dell’intervento',
-        paragraphs: [
-          'È indispensabile una visita di controllo. Nelle femmine è consigliabile operare lontano dal calore, salvo urgenza. Digiuno da cibo dalle 19:00 del giorno prima e da acqua dalle 21:00.',
-          'In struttura gli interventi si effettuano al mattino: il gatto va consegnato tra le 8:30 e le 9:30. Lo tratteniamo fino al pomeriggio per seguire il risveglio.',
-        ],
-      },
-      {
-        heading: 'Raccomandazioni post operatorie',
-        paragraphs: [
-          'La sera, a casa, lasciate il gatto nel trasportino con lo sportello aperto, in una stanza chiusa e al buio, senza salti su letti e mobili. Evitate rumori e stimolazioni: anche se sveglio, non ha ancora il pieno controllo motorio. Di norma non serve terapia antibiotica né asportare i punti.',
-        ],
-      },
-      {
-        heading: 'Vantaggi',
-        paragraphs: [
-          'Si riducono marcatura, aggressività e, nelle femmine, i miagolii del calore. Un gatto sterilizzato vive in media più a lungo (14–18 anni contro 5–10), fugge e litiga di meno, si espone meno a ferite e malattie infettive. Nelle gatte scendono infezioni uterine e tumori mammari. La gravidanza non è medica­mente necessaria.',
-        ],
-      },
-    ],
+    id: 'senior',
+    title: 'Animale senior',
+    description:
+      'In età geriatrica restiamo al vostro fianco con percorsi di prevenzione ed esami mirati, per accompagnarvi nelle fasi più delicate della vita insieme.',
+    highlights: ['Check-up senior', 'Esami mirati', 'Accompagnamento'],
   },
   {
-    id: 'svezzare-gattino',
-    slug: 'svezzare-gattino-neonato',
-    title: 'Come svezzare un gattino neonato',
-    excerpt: 'Ambientamento, lettiera, alimentazione, parassiti, vaccini e microchip.',
-    image: asset('images/adozioni/mamma-micini.jpg'),
-    sections: [
-      {
-        heading: 'Quando e come accoglierlo',
-        paragraphs: [
-          'In genere un gattino è svezzato a due mesi: è il momento ideale per il distacco dalla madre. Lasciatelo nel trasportino aperto in una stanza tranquilla e rispettate i suoi tempi. Non è un giocattolo: i bambini vanno guidati, soprattutto durante il sonno.',
-        ],
-      },
-      {
-        heading: 'Casa, lettiera e cibo',
-        paragraphs: [
-          'Mettete subito a disposizione una lettiera accessibile, lontana da cibo e gioco. Serve una stanza ampia per correre e arrampicarsi, e molte ore di sonno in un posto caldo e tranquillo. Ciotole di acqua e cibo lontano dalla lettiera e dal tavolo dei proprietari: niente assaggi dalla vostra dieta.',
-          'Cambiate alimento in modo graduale nell’arco di una settimana, con cibi specifici per gattini.',
-        ],
-      },
-      {
-        heading: 'Salute nei primi mesi',
-        paragraphs: [
-          'Una visita veterinaria valuta lo stato generale e il piano di crescita. Sverminazione dopo esame delle feci, profilassi per pulci e zecche, vaccini tra il secondo e il terzo mese (rinnovati ogni anno) e, se esce o sta con altri gatti, anche FeLV. Il microchip serve per riconoscimento, passaporto e viaggi.',
-          'Dai sei mesi si può valutare la sterilizzazione: raddoppia la speranza di vita, riduce fughe e litigi, ma va considerata anche la tendenza al sovrappeso.',
-        ],
-      },
-    ],
+    id: 'parassiti',
+    title: 'Prevenzione antiparassitaria',
+    description:
+      'Percorsi contro parassiti esterni (pulci e zecche) e interni (vermi, coccidi e giardia), definiti insieme a voi in base alle abitudini quotidiane.',
+    highlights: ['Pulci e zecche', 'Endoparassiti', 'Personalizzato'],
   },
   {
-    id: 'educare-cucciolo',
-    slug: 'educare-cucciolo',
-    title: 'Come educare e costruire una buona relazione con un cucciolo',
-    excerpt: 'Adozione, socializzazione, eliminazione all’esterno e comunicazione senza punizioni.',
-    image: asset('images/hero.jpg'),
-    sections: [
-      {
-        heading: 'Il cucciolo in casa',
-        paragraphs: [
-          'Il cane è un animale sociale: giardino e giochi non compensano una vita in comune. Per l’inserimento usate feromoni di sintesi, un luogo di riposo adeguato e, di notte, una cuccetta in camera: fino all’adozione dormiva con madre e fratelli.',
-          'L’adozione ideale è intorno ai due mesi. Dalla terza settimana la madre insegna a controllare il morso e a calmarsi dopo il gioco.',
-        ],
-      },
-      {
-        heading: 'Eliminare nel luogo corretto',
-        paragraphs: [
-          'Fino a circa quattro mesi il cucciolo trattiene le deiezioni solo per pochi minuti. Giornali e traversine possono insegnare a sporcare in casa. Accompagnatelo fuori ogni ora, soprattutto dopo sonno, pasto o gioco, e ricompensate con un bocconcino. Le punizioni, soprattutto a posteriori, sono inefficaci e possono far evacuare di nascosto.',
-        ],
-      },
-      {
-        heading: 'Conoscere il mondo',
-        paragraphs: [
-          'Passeggiate quotidiane fin dal primo giorno: persone, cani, rumori e oggetti vanno conosciuti come non pericolosi. Preferite la pettorina al collare. Un giardino, anche grande, non sostituisce il contatto con l’esterno.',
-        ],
-      },
-      {
-        heading: 'Comunicare',
-        paragraphs: [
-          'Postura bassa e voce dolce invitano ad avvicinarsi; postura alta e tono fermo indicano di allontanarsi. Ricompensate subito i comportamenti desiderati e ignorate quelli indesiderati. La punizione fisica costruisce una relazione basata sulla paura.',
-        ],
-      },
-    ],
+    id: 'orale',
+    title: 'Igiene orale',
+    description:
+      'Attenzione alla salute della bocca con odontostomatologia e consigli di prevenzione dentale lungo tutto l’arco di vita.',
+    highlights: ['Salute dentale', 'Prevenzione', 'Odontostomatologia'],
+  },
+  {
+    id: 'alimentazione',
+    title: 'Alimentazione e peso',
+    description:
+      'Supporto nutrizionale con specialista dedicato, per una dieta adeguata e la gestione del peso nelle diverse fasi di vita.',
+    highlights: ['Nutrizione', 'Peso forma', 'Consulenza'],
   },
 ]
 
-export function getArticle(slug) {
-  return articles.find((article) => article.slug === slug)
-}
+export const degenzaPoints = [
+  {
+    title: 'Due degenze separate',
+    description: 'Una per i cani e una per i gatti, per garantire comfort, igiene e un ambiente più sereno.',
+  },
+  {
+    title: 'Vasca in acciaio inox',
+    description:
+      'In entrambe le degenze è presente una vasca inox per lavaggi medicati prima delle chirurgie o per mantenere i pazienti puliti durante il ricovero.',
+  },
+  {
+    title: 'Day hospital',
+    description:
+      'Siamo una clinica diurna e ci occupiamo prevalentemente di day hospital, con assistenza dedicata durante l’orario di apertura.',
+  },
+  {
+    title: 'Assistenza notturna quando serve',
+    description:
+      'Per chirurgie complesse o urgenze da effettuare nel pomeriggio possiamo fermarci la notte e seguire al meglio il paziente che lo necessita.',
+  },
+  {
+    title: 'Accesso diretto al giardino',
+    description:
+      'Le porte-finestre delle degenze consentono agli animali ricoverati di accedere al giardino: un’esigenza particolarmente importante per i cani.',
+  },
+]
 
 export const companyValues = [
   {
-    name: 'Cura del dolore',
-    description: 'Attenzione all’analgesia in visita, in chirurgia e al risveglio.',
+    name: 'Accoglienza',
+    description: 'Spazi pensati per cani e gatti, con giardino e ambienti che richiamano la natura.',
   },
   {
     name: 'Continuità',
-    description: 'Reperibilità 24h/24 e visite anche fuori orario, in sede o a domicilio.',
+    description: 'Dal 2013 al vostro fianco, dalla prima visita all’età senior.',
   },
   {
     name: 'Precisione',
-    description: 'Check-up preanestesiologico e diagnostica digitale prima di ogni intervento.',
+    description: 'Diagnostica aggiornata, laboratorio interno e locali dedicati a ogni funzione.',
   },
   {
-    name: 'Accoglienza',
-    description: 'Degenza igienica, terapia intensiva e supporto alle adozioni.',
+    name: 'Trasparenza',
+    description: 'Disponibili al telefono per seguire i pazienti e indicare dove recarsi in caso di urgenza.',
   },
 ]
 
 export const testimonials = [
   {
-    id: 'dolore',
-    name: 'Trattamento del dolore',
-    company: 'Alto Vergante Vet',
+    id: 'crescita',
+    name: 'Dalla passione alla clinica',
+    company: 'Clinica Alto Vergante',
     quote:
-      'Anche in anestesia generale l’animale può percepire dolore. Per questo associamo analgesici sistemici e anestesia loco-regionale.',
+      'Nel 2013 ho aperto da solo un piccolo ambulatorio a Nebbiuno. Oggi siamo una clinica organizzata per ospitare e curare al meglio i nostri amici a 4 zampe.',
   },
   {
-    id: 'urgenza',
-    name: 'Urgenze',
-    company: 'Alto Vergante Vet',
+    id: 'fiducia',
+    name: 'Un ringraziamento',
+    company: 'Dr. Luca Giometti',
     quote:
-      'Radiologia digitale e monitoraggio continuo ci permettono di gestire in tempi rapidi i pazienti critici, come gli animali investiti.',
+      'Ringrazio tutti della fiducia data a me e al mio staff per questi 13 anni di lavoro. Abbiamo vissuto insieme le emozioni più belle e anche le più difficili.',
   },
   {
-    id: 'casa',
-    name: 'A casa vostra',
-    company: 'Alto Vergante Vet',
+    id: 'cura',
+    name: 'Come fossero i nostri',
+    company: 'Clinica Alto Vergante',
     quote:
-      'Fuori orario si effettuano visite a domicilio e in struttura su appuntamento, anche al mattino e al pomeriggio.',
+      'Tutti noi dello staff abbiamo amici a 4 zampe: è per questo che tratteremo i vostri animali come se fossero i nostri.',
   },
 ]
 
 export const copy = {
   hero: {
-    kicker: 'Nebbiuno · Reperibilità 24h/24',
-    title: 'Cura veterinaria per cani, gatti e animali esotici',
-    lead: 'L’ambulatorio Alto Vergante è dotato di macchinari di ultima generazione. Prestazioni specialistiche, degenza, terapia intensiva e particolare attenzione al trattamento del dolore.',
+    kicker: 'Nebbiuno · Clinica veterinaria',
+    title: 'Cura veterinaria in uno spazio pensato per i vostri animali',
+    lead: 'Dopo 13 anni di ambulatorio, oggi siamo una clinica con locali dedicati, giardino, diagnostica aggiornata e un rapporto di famiglia con chi ci sceglie.',
     ctaProducts: 'Scopri i servizi',
     ctaQuote: 'Prenota una visita',
-    imageAlt: 'Sala d’attesa dell’Ambulatorio Veterinario Alto Vergante a Nebbiuno',
+    imageAlt: 'Sala d’attesa della Clinica Veterinaria Alto Vergante a Nebbiuno',
     imageSrc: asset('images/hero.jpg'),
   },
   about: {
-    kicker: 'L’ambulatorio',
-    title: 'Struttura attrezzata, dalla visita alla degenza',
-    p1: 'L’ambulatorio Alto Vergante è dotato di macchinari all’avanguardia. Si effettuano prestazioni anche specialistiche in gastroenterologia, dermatologia, odontoiatria, ortopedia, neurologia, oculistica, cardiologia, comportamentalismo, medicina degli animali esotici, laboratorio, radiologia, ecografia e chirurgia dei tessuti molli e duri.',
-    p2Before: 'La struttura è attrezzata per ospitare animali in ',
-    p2Strong: 'degenza e terapia intensiva',
+    kicker: 'La Clinica',
+    title: 'Dall’ambulatorio alla clinica, con la stessa passione',
+    p1: 'La Clinica nasce per accogliere al meglio i nostri amici a 4 zampe. Dopo 13 anni di ambulatorio il numero di persone che ci ha affidato le cure dei loro animali è cresciuto: servivano spazi più ampi e locali dedicati a ogni funzione.',
+    p2Before: 'La struttura è stata realizzata dall’esperienza personale unita alla professionalità di un architetto specializzato in cliniche veterinarie. Il concetto chiave è l’',
+    p2Strong: 'armonia',
     p2After:
-      '. Particolare attenzione è dedicata al trattamento del dolore, anche durante le chirurgie in anestesia generale.',
-    p3: 'Direzione sanitaria del Dott. Luca Giometti. Reperibilità 24h/24, visite su appuntamento anche fuori orario e, quando serve, a domicilio.',
+      ': dal giardino che circonda la clinica ai colori verde salvia per i gatti e sabbia per i cani.',
+    p3: 'Direzione sanitaria del Dott. Luca Giometti. Professionalità e rapporto di famiglia, con macchinari di ultima generazione e due ventilazioni meccaniche controllate per il ricambio dell’aria.',
     statsNote: '',
-    imageAlt: 'Sala visita dell’ambulatorio veterinario Alto Vergante',
+    imageAlt: 'Sala visita della Clinica Veterinaria Alto Vergante',
     imageSrc: asset('images/clinic.jpg'),
   },
   homeAbout: {
     kicker: 'Chi siamo',
-    title: 'Un ambulatorio per l’Alto Vergante',
+    title: 'Una clinica per l’Alto Vergante',
   },
   specialties: {
     kicker: 'Aree cliniche',
-    title: 'Dalla visita di base alla chirurgia specialistica',
-    lead: 'Quattordici ambiti, un’unica struttura a Nebbiuno.',
+    title: 'Dalla visita di base alle specializzazioni',
+    lead: 'Medicina interna, comportamento, diagnostica, chirurgia, degenza e prevenzione.',
     viewAll: 'Vedi tutti i servizi',
   },
   services: {
-    kicker: 'Servizi',
-    title: 'Dalla visita alla terapia intensiva',
-    lead: 'Medicina interna, chirurgia, ortopedia, radiologia digitale, odontoiatria e degenza.',
-    featuredBadge: 'Anche fuori orario',
+    kicker: 'Servizi e specializzazioni',
+    title: 'Dalla visita alla degenza',
+    lead: 'Medicina interna, comportamento, diagnostica, laboratorio, chirurgia, odontostomatologia e rete di collaborazioni.',
+    featuredBadge: 'Prioritario',
     viewAll: 'Tutti i servizi',
   },
   staff: {
     kicker: 'Lo staff',
-    title: 'Medici e assistenti',
-    lead: 'Direzione sanitaria del Dott. Luca Giometti, con specialisti interni e collaboratori esterni.',
+    title: 'Medici, tecnici e collaboratori',
+    lead: 'Direzione sanitaria del Dott. Luca Giometti, con specialisti e un team dedicato all’accoglienza.',
     viewAll: 'Conosci lo staff',
   },
   strengths: {
     kicker: 'Perché qui',
-    title: 'Cura continua, non solo in ambulatorio',
+    title: 'Spazi, tecnologia e relazione',
   },
   values: {
     kicker: 'Approccio',
     title: 'Come lavoriamo',
   },
   testimonials: {
-    kicker: 'Principi',
-    title: 'Quello che ci guida in sala e in visita',
+    kicker: 'La nostra storia',
+    title: 'Tredici anni al vostro fianco',
   },
-  articles: {
-    kicker: 'Articoli',
-    title: 'Consigli dallo staff',
-    lead: 'Anestesia, sterilizzazione, svezzamento e primi mesi con un cucciolo.',
-    viewAll: 'Leggi gli articoli',
-    read: 'Leggi',
+  prevention: {
+    kicker: 'Prevenzione',
+    title: 'Percorsi di prevenzione',
+    lead: 'Seguiamo le linee guida internazionali WSAVA e costruiamo insieme a voi i percorsi più adatti a ogni fase di vita.',
+    viewAll: 'Scopri i percorsi',
   },
-  adoptions: {
-    kicker: 'Adozioni',
-    title: 'Cercano casa',
-    lead: 'Annunci segnalati in ambulatorio. Per informazioni o per proporne uno, scriveteci.',
-    viewAll: 'Vedi le adozioni',
-    propose: 'Proponi un annuncio',
+  degenza: {
+    kicker: 'Degenza',
+    title: 'Degenza e terapia intensiva',
+    lead: 'Due degenze separate, day hospital e assistenza dedicata quando il paziente lo richiede.',
+    viewAll: 'Scopri la degenza',
   },
   hours: {
     kicker: 'Orari',
     title: 'Quando siamo aperti',
-    note: 'Su appuntamento anche al mattino e al pomeriggio oltre gli orari indicati. Visite a domicilio. Reperibilità 24h/24.',
+    note: 'Prenotazioni telefoniche e via WhatsApp. Non siamo pronto soccorso né struttura H24: in caso di urgenza vi indichiamo la struttura più idonea.',
   },
   cta: {
     title: 'Serve una visita o un parere?',
-    lead: 'Chiamate o compilate il modulo: vi ricontattiamo per un appuntamento in sede o a domicilio.',
+    lead: 'Chiamate o scrivete su WhatsApp: vi aiutiamo a fissare un appuntamento o a capire come procedere.',
     mail: 'Scrivi una email',
     form: 'Apri il modulo',
     quote: 'Prenota una visita',
@@ -500,7 +486,7 @@ export const copy = {
   contact: {
     kicker: 'Contatti',
     title: 'Prenotate una visita',
-    lead: 'Compilate il modulo o chiamate il cellulare dello studio. Referente: Dott. Luca Giometti.',
+    lead: 'Compilate il modulo, chiamate o scrivete su WhatsApp. Referente: Dott. Luca Giometti.',
     name: 'Nome e cognome',
     namePlaceholder: 'Es. Maria Rossi',
     pet: 'Nome dell’animale',
@@ -524,10 +510,13 @@ export const copy = {
     errorBody:
       'Non siamo riusciti a inviare la richiesta. Riprovate tra qualche minuto o chiamateci direttamente.',
     missingKey:
-      'Il modulo non è ancora configurato. Contattateci direttamente via email o telefono.',
+      'Il modulo non è ancora configurato. Contattateci direttamente via email, telefono o WhatsApp.',
     address: 'Sede',
-    phones: 'Cellulare',
-    mapTitle: 'Ambulatorio Veterinario Alto Vergante — Via Provinciale Alto Vergante 16, Nebbiuno',
+    phones: 'Cellulare / WhatsApp',
+    urgencyTitle: 'Urgenze',
+    urgencyText:
+      'Siamo disponibili telefonicamente per seguire i pazienti in cura e indicare la struttura più idonea in caso di urgenza. Non siamo una struttura con reperibilità H24 né pronto soccorso.',
+    mapTitle: 'Clinica Veterinaria Alto Vergante — Via Provinciale Alto Vergante 16, Nebbiuno',
     mapLoad: 'Carica mappa Google',
     mapPrivacy:
       'La mappa è un servizio di Google: viene caricata solo dopo questo clic, per non installare cookie di terze parti in automatico.',
@@ -538,7 +527,7 @@ export const copy = {
   },
   footer: {
     blurb:
-      'Ambulatorio veterinario a Nebbiuno, sull’Alto Vergante. Visite, diagnostica, chirurgia e degenza, con reperibilità 24h/24.',
+      'Clinica veterinaria a Nebbiuno, sull’Alto Vergante. Visite, diagnostica, chirurgia, degenza e percorsi di prevenzione.',
     legal: 'Informazioni',
     privacy: 'Privacy',
     cookie: 'Cookie policy',
@@ -558,12 +547,13 @@ export const speciesOptions = ['Cane', 'Gatto', 'Coniglio / esotico', 'Altro']
 
 export const quoteProductOptions = [
   'Visita generale',
-  'Vaccinazione / microchip',
-  'Visita a domicilio',
+  'Vaccinazione / prevenzione',
+  'Medicina comportamentale',
   'Chirurgia',
   'Ortopedia',
-  'Odontoiatria',
+  'Odontostomatologia',
   'Radiologia / ecografia',
-  'Adozione',
+  'Cardiologia',
+  'Nutrizione',
   'Altro',
 ]

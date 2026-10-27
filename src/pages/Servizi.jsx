@@ -10,6 +10,12 @@ export default function Servizi() {
       <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <SectionHeader kicker={content.kicker} title={content.title} lead={content.lead} align="center" />
 
+        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-gold/35 bg-sand/80 px-6 py-5 text-sm leading-relaxed text-ink/75">
+          Siamo disponibili telefonicamente per seguire lo stato clinico dei pazienti e dare consigli
+          sulla gestione fuori orario. Non siamo una struttura con reperibilità H24 né pronto
+          soccorso: in caso di urgenza vi indichiamo la struttura più idonea.
+        </div>
+
         <div className="mt-12 space-y-6">
           {services.map((service) => (
             <article
